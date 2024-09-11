@@ -89,8 +89,16 @@ import static student.StudentUtils.*;
 
 import java.util.Arrays;
 
+import lesson11_Exception.RangeException;
+
 //Logic
-public class StudentService {
+public class StudentService extends RangeException {
+	private static int start;
+	public StudentService() {
+		super(start);
+		// TODO Auto-generated constructor stub
+	}
+
 	private Student[] students = new Student[5];
 	private int cnt;
 	
@@ -106,15 +114,23 @@ public class StudentService {
 	}
 	//학생 등록
 	public void add() {
+		int num =100;
+		if(num >=0 || num <=100) {
+			throw new RangeException(0);
+		}
+			
 		int no = nextInt("학번");
 		String name = nextLine("이름");
 		int kor = nextInt("국어");
 		int eng = nextInt("영어");
-		int mat = nextInt("수학");
+		int mat = nextInt("수학");	
 		if(cnt == students.length) {
 			students = Arrays.copyOf(students, students.length *2);
 		}
 		students[cnt++]= new Student(no,name,kor,eng,mat);
+		
+		
+		
 		
 		
 		
@@ -186,3 +202,8 @@ public class StudentService {
 		return student;
 	}
 }
+//이름은 반드시 한글, 이름 입력 안하는것도 문제, 이름 최소2 최대4글자의 한글
+//점수의 범위 0~100
+//학번 중복 불허
+//1.학번 오름차순 2.이름 오름차순 3.점수 내림차순
+//중간에 오류상황 발생 시 정지 되지 않게하기

@@ -22,6 +22,7 @@ public class StudentMain {
 				System.out.println("등록");
 				ss.add();
 				break;
+				
 			case 3:
 				System.out.println("수정");
 				ss.modify();
