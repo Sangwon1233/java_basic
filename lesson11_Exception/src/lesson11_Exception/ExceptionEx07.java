@@ -1,12 +1,14 @@
 package lesson11_Exception;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 
 public class ExceptionEx07 {
 	public static void main(String[] args) throws Exception{
-		//checked exception : 일반 예외
+		// checked exception : 일반 예외
 		
-		//unchecked exception :런타임 예외
+		// unchecked exception : 런타임 예외
+		
 		try {
 			m1();
 		} catch (Exception e) {
@@ -17,23 +19,22 @@ public class ExceptionEx07 {
 		System.out.println("가능");
 	}
 	
-	static void m1() throws Exception{//선언문의 연장		
-		Exception ex =new Exception();
-		throw ex;//s가 없는 쓰로우는 그냥 던지는거 
+	static void m1() throws Exception{
+		Exception ex = new Exception();
+		throw ex;
 	}
-
 }
 
-	class A{
-		void m() throws IOException{
-			
-		}
+class A {
+	void m() throws IOException{
+		
 	}
-	class B extends A{
-	
-		@Override
+}
+class B extends A{
+
+	@Override
 	public void m() throws MalformedURLException {
 		
-		}
-	}	
+	}
 	
+}
