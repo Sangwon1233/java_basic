@@ -309,6 +309,8 @@ public class StudentService {
 		students[cnt++] = new Student(4, "개똥이", 77, 66, 77);
 		cloneAndSort();
 	}
+	
+	
 	// 학생 등록
 	public void add() {
 		int no = nextInt("학번");

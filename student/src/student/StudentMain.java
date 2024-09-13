@@ -97,7 +97,9 @@ public class StudentMain {
 				System.out.println(e.getMessage());
 				e.printStackTrace();
 			}
-			
+			catch(Exception e) {
+				System.out.println(e);
+			}
 		}
 	}
 }

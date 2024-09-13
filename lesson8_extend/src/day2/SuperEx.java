@@ -2,40 +2,47 @@ package day2;
 
 public class SuperEx {
 	public static void main(String[] args) {
-		
-		Child Child = new Child();
-		Child.print();
-		
+		Child child = new Child();
+		child.print();
 	}
-
 }
-class parent{
+class Parent {
 	int number = 3;
-	public parent() {
-	}
 	
+//	public Parent() {
+//		// TODO Auto-generated constructor stub
+//	}
+//	
+//	public Parent(int number) {
+//		System.out.println("부모 객체 생성");
+//	}
 	
-	public parent(int number) {
-	super();
-		System.out.println("부모 객체 생성");
-	}
-	object m() {
-		return null;
+//	기본생성자가 만들어지는 조건
+//	해당 클래스에 어떠한 생성자도 없을 때
+	public Parent(int number) {
 		
+	}
+	
+	Object m() {
+		return null;
 	}
 }
-class Child extends parent{
-	//int number =2;
+class Child extends Parent {
+//	int number = 2;
 	
-
-	void print() {
-		int number =1;
-		System.out.println(number); //메서드 지역변수 넘버
-		System.out.println(this.number); //자식 객체의 넘버
-		System.out.println(super.number); // 부모 객체의 넘버
-		
+	public Child() {
+		super(1);
 	}
-	Integer m{
+	
+	void print() {
+		int number = 1;
+		System.out.println(number);
+		System.out.println(this.number);
+		System.out.println(super.number);
+	}
+	
+	Integer m() {
 		return 0;
 	}
 }
+ 
