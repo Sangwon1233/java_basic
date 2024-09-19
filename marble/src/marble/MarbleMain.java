@@ -6,6 +6,8 @@ public class MarbleMain {
 		GameService service = new GameService();
 		service.play();
 		
+//		System.out.println(new Random().nextInt(3));
+		
+		
 	}
-
 }

@@ -62,6 +62,8 @@ public class StudentMain {
 	public static void main(String[] args) {
 		// UI
 		// Create Read Update Delete
+		
+		
 		StudentService ss = new StudentService();
 		
 		while(true) {
@@ -73,15 +75,15 @@ public class StudentMain {
 					break;
 				case 2:
 					ss.add();
-					ss.cloneAndSort();
+//					ss.cloneAndSort();
 					break;
 				case 3:
 					ss.modify();
-					ss.cloneAndSort();
+//					ss.cloneAndSort();
 					break;
 				case 4:
 					ss.remove();
-					ss.cloneAndSort();
+//					ss.cloneAndSort();
 					break;
 				case 5:
 					System.out.println("bye");

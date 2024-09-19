@@ -14,5 +14,4 @@ public class CommonUtils {
 	static int nextInt(String msg) {
 		return Integer.parseInt(nextLine(msg));
 	}
-
 }
