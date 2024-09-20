@@ -20,7 +20,7 @@ public class Final {
 		list.toArray(arr);
 		System.out.println(Arrays.toString(arr));
 		
-		//Colletions()
+		//Colletions
 		
 		Collections.shuffle(list);
 		System.out.println(list);
