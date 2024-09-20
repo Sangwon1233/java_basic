@@ -14,6 +14,8 @@ public class StudentUtils {
 	static int nextInt(String msg) {
 		return Integer.parseInt(nextLine(msg));
 	}
+	
+	
 //	static Student add1(){
 //		int no1=StudentUtils.nextInt("학번을 입력하세요");
 //		String name1=StudentUtils.nextLine("이름을 입력하세요");

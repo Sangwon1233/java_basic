@@ -293,6 +293,7 @@ import static student.StudentUtils.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -314,8 +315,8 @@ public class StudentService {
 	
 	
 	
-	{
-		students.add(new Student(2, "새똥이", 80, 90, 100));
+	{//초기화 블럭
+		students.add(new Student(2, "새똥이", 80, 90, 100)); 
 		students.add(new Student(4, "개똥이", 77, 66, 77));
 		students.add(new Student(1, "새똥이", 80, 90, 100));
 		students.add(new Student(3, "개똥이", 77, 66, 77));
@@ -371,7 +372,8 @@ public class StudentService {
 			break;
 		}
 
-		for(int i = 0 ; i < students.size() ; i++) {
+	//	for(int i = 0 ; i < students.size() ; i++) {
+		for(int i = 0 ; i < tmp.size() ; i++) {
 //			System.out.println(students[i]);
 			System.out.println(tmp.get(i));
 			
@@ -408,14 +410,15 @@ public class StudentService {
 //			for(int i = 0 ; i<100_000;i++) {
 //				list.remove(0);//0번 인덱스 지우기
 //			}
-		for(int i = 0 ; i < students.size() ; i++) {
-			if(students.get(i) == s) { // i = 1
-					students.remove(i);//0번 인덱스 지우기
-				break;
-			}
-			
-		
-		}
+		students.remove(s);
+//		for(int i = 0 ; i < students.size() ; i++) {
+//			if(students.get(i) == s) { // i = 1
+//					students.remove(i);//i번 인덱스 지우기
+//				break;
+//			}
+//			
+//		
+//		}
 	}
 	private Student findBy(int no) {
 		Student student = null;
@@ -465,15 +468,29 @@ public class StudentService {
 //	 정렬
 	public void cloneAndSort() {
 
-	//	noSortedStudents = students.clone();
-		noSortedStudents = new ArrayList<Student>(students);
-		nameSortedStudents = new ArrayList<Student>(students);
-		totalSortedStudents = new ArrayList<Student>(students);
+//		noSortedStudents = students.clone();
+//		noSortedStudents = new ArrayList<Student>(students);
+//		nameSortedStudents = new ArrayList<Student>(students);
+//		totalSortedStudents = new ArrayList<Student>(students);
+		
+		noSortedStudents= new ArrayList<Student>(students);
+		nameSortedStudents= new ArrayList<Student>(students);
+		totalSortedStudents= new ArrayList<Student>(students);
+		
+		
 		
 //		nameSortedStudents = students;
-		noSortedStudents.sort((i1,i2) -> i1.getNo()-i2.getNo());
-		nameSortedStudents.sort((i1,i2) -> i1.getName().compareTo(i2.getName())); //compareTO는 문자 비교
-		totalSortedStudents.sort((i1,i2) -> i1.total()-i2.total());
+		noSortedStudents.sort((a,b) -> a.getNo()-b.getNo());
+		nameSortedStudents.sort(new Comparator<Student>() {
+
+			@Override
+			public int compare(Student o1, Student o2) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+			
+		}); //compareTO는 문자 비교
+		sort(2, totalSortedStudents);
 	
 		//이름
 	
@@ -499,7 +516,7 @@ public class StudentService {
 					condition = arr[j].getNo() > arr[j+1].getNo();
 					break;
 				case 1:
-					condition = arr[j].getName().compareTo(arr[j+1].getName()) > 0;
+					condition = arr[j].getName().compareTo(arr[j+1].getName()) > 0;//문자 비교는 compareTo
 					break;
 				case 2:
 					condition = arr[j].total() < arr[j+1].total();
