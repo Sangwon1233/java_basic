@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="ad/src"/>
+	<classpathentry kind="src" path="lambda/src"/>
+	<classpathentry kind="src" path="lesson01_install/src"/>
+	<classpathentry kind="src" path="lesson03_variable/src"/>
+	<classpathentry kind="src" path="lesson04_operator/src"/>
+	<classpathentry kind="src" path="lesson05_control/src"/>
+	<classpathentry kind="src" path="lesson06_array/src"/>
+	<classpathentry kind="src" path="lesson07_oop/src"/>
+	<classpathentry kind="src" path="lesson09_interface/src"/>
+	<classpathentry kind="src" path="lesson10_inner/src"/>
+	<classpathentry kind="src" path="lesson11_Exception/src"/>
+	<classpathentry kind="src" path="lesson12_api/src"/>
+	<classpathentry kind="src" path="lesson13_collection/src"/>
+	<classpathentry kind="src" path="lesson14_generic/src"/>
+	<classpathentry kind="src" path="lesson15_lambda/src"/>
+	<classpathentry kind="src" path="lesson16_stream/src"/>
+	<classpathentry kind="src" path="lesson8_extend/src"/>
+	<classpathentry kind="src" path="marble/src"/>
+	<classpathentry kind="src" path="student/src"/>
+	<classpathentry kind="src" path="test/src"/>
+	<classpathentry kind="output" path="lesson01_install/bin"/>
+</classpath>
