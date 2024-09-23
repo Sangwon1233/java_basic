@@ -1,6 +1,7 @@
 package student;
 import static student.StudentUtils.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 
 // "abcdabcd".split("b") >> {"a", "cda", "cd"}
 
-public class StudentService {
+public class StudentService implements Serializable{
 	private List<Student> students = new ArrayList<Student>();
 	private List<Student> totalSortedStudents;
 	private List<Student> noSortedStudents;
@@ -21,11 +22,21 @@ public class StudentService {
 //	private int cnt;
 	
 	{
-		students.add(new Student(1, "새똥이", 80, 90, 100));
-		students.add(new Student(2, "개똥이", 77, 66, 77));
-		students.add(new Student(3, "새똥이", 80, 90, 100));
-		students.add(new Student(4, "개똥이", 77, 66, 77));
+//		students.add(new Student(1, "새똥이", 80, 90, 100));
+//		students.add(new Student(2, "개똥이", 77, 66, 77));
+//		students.add(new Student(3, "새똥이", 80, 90, 100));
+//		students.add(new Student(4, "개똥이", 77, 66, 77));
+		
 		cloneAndSort();
+		
+	}
+	
+	
+	public List<Student> getStudents() {
+		return students;
+	}
+	public void setStudents(List<Student> students) {
+		this.students = students;
 	}
 	// 학생 등록
 	public void add() {
@@ -159,6 +170,7 @@ public class StudentService {
 	
 	// 정렬
 	public void cloneAndSort() { 
+		
 		noSortedStudents = new ArrayList<Student>(students);
 		nameSortedStudents = new ArrayList<Student>(students);
 		totalSortedStudents = new ArrayList<Student>(students);
@@ -173,6 +185,8 @@ public class StudentService {
 		});
 		Comparator<Student> comp = new MyComp();
 		totalSortedStudents.sort(comp);
+		
+		
 	}
 }
 class MyComp implements Comparator<Student> {
